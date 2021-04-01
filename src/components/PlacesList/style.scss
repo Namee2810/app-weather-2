@@ -1,0 +1,93 @@
+.PlacesList {
+  width: 600px;
+  display: block;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+
+  grid-column: 1;
+  grid-row: 2;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(223, 223, 223);
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(170, 170, 170);
+  }
+  &_card {
+    position: relative;
+    display: inline-flex;
+    padding: 0 10px;
+    margin: 0 15px;
+    border-radius: 15px;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 150px;
+    background: rgb(235, 235, 235);
+
+    transition: all 0.25s ease-in-out;
+    animation: PlacesList_card 0.25s ease-in-out;
+    cursor: pointer;
+
+    &:hover &-remove {
+      display: block;
+    }
+
+    &-title {
+      font-weight: bold;
+      white-space: normal;
+    }
+
+    &-select {
+      height: 170px;
+      width: 140px;
+    }
+    &-remove {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 0px;
+
+      color: red;
+      font: {
+        weight: bold;
+        size: 20px;
+      }
+      transform: rotateZ(45deg);
+      animation: PlacesList_card-remove 0.25s ease-in-out;
+    }
+  }
+}
+
+@keyframes PlacesList_card {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes PlacesList_card-remove {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

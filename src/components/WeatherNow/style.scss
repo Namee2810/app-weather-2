@@ -1,0 +1,69 @@
+.WeatherNow {
+  grid-column: 2;
+  grid-row: 1/4;
+
+  padding: 0 50px;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #100e3b;
+  color: rgb(211, 211, 211);
+  font-weight: 500;
+
+  @media (max-width: 1200px) {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 100px 0;
+  }
+
+  transition: width 0.5s ease-in-out;
+
+  &_time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > img {
+      width: 48px;
+    }
+    & > div {
+      padding-left: 10px;
+      & > div:first-child {
+        font: {
+          size: 24px;
+          weight: bold;
+        }
+      }
+      & > div:last-child {
+        font-size: 16px;
+      }
+    }
+  }
+  &_degree {
+    font-size: 86px;
+    & > span {
+      font-size: 36px;
+    }
+  }
+  &_city {
+    margin-bottom: 30px;
+    font: {
+      size: 26px;
+    }
+    & > a {
+      font-size: 20px;
+      vertical-align: top;
+    }
+
+    &-add {
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+.text-white {
+  color: white;
+}

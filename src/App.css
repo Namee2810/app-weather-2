@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  font-family: "Quicksand", sans-serif;
+  background: #e7e7e7;
+
+  display: flex;
+  justify-content: center;
+}
